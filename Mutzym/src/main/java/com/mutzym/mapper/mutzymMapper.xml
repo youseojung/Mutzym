@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+<mapper namespace="com.mutzym.mapper.MutzymMapper">
+ 
+    <select id="UserListCount" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM user
+    </select>
+    
+        <select id="UserLogin" resultType="com.mutzym.Model.User">
+        SELECT
+            	USER_ID
+            ,	USER_PWD	
+        FROM user
+        WHERE USER_ID = #{USER_ID}
+        AND USER_PWD = #{USER_PWD}
+    </select>
+</mapper>
+
